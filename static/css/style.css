@@ -1,0 +1,220 @@
+/* ========== General Resets ========== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== Top Header (Contact + Social) ========== */
+.header_top {
+  background: #ead281;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.contactinfo ul {
+  display: flex;
+  gap: 15px;
+}
+
+.contactinfo a {
+  color: #333;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social-icons ul {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #555;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f7941d;
+}
+
+/* ========== Main Header ========== */
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo img {
+  max-height: 60px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav > li {
+  position: relative;
+}
+
+.nav > li > a {
+  padding: 10px 15px;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav > li > a:hover,
+.nav > li > a.active {
+  
+  color: #333;
+  border-radius: 4px;
+}
+
+/* Dropdown menu */
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #e39a9a;
+  min-width: 180px;
+  z-index: 10;
+}
+
+.sub-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #f09b9b;
+}
+
+.sub-menu li a:hover {
+  background: #f7941d;
+  color: #fff;
+}
+
+.dropdown:hover .sub-menu {
+  display: block;
+}
+
+/* ========== Search and Action Buttons ========== */
+.search-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f7941d;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.action-btn:hover {
+  background: #e67e00;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 992px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav > li > a {
+    padding: 10px 0;
+  }
+
+  .search-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo img {
+    max-height: 50px;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sub-menu {
+    position: static;
+    border: none;
+  }
+
+  .dropdown:hover .sub-menu {
+    display: none;
+  }
+
+  .dropdown > a::after {
+    content: ' ▼';
+    font-size: 10px;
+  }
+
+  .dropdown > a:focus + .sub-menu,
+  .dropdown > a:active + .sub-menu {
+    display: block;
+  }
+}
